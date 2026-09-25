@@ -80,6 +80,7 @@ function randomHorizontal() {
     background-color: #d866ff;
     padding: 10px 20px;
     border-radius: 20px;
+    margin: 0 20px;
 }
 
 .meowy {
@@ -97,6 +98,7 @@ function randomHorizontal() {
     background-color: #f0a4fc;
     padding: 10px 20px;
     border-radius: 20px;
+    margin: 0 20px;
 }
 
 .yay {
