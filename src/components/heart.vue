@@ -11,9 +11,18 @@
     --heart-size: clamp(50px, 4vw, 100px);
     transform: scale(4);
     position: absolute;
+    animation: appear .6s ease-in;
 }
 
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
 
+    100% {
+        opacity: 1;
+    }
+}
 /* .heart,
 .heart::after,
 .heart::before {

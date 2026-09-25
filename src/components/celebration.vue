@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import meowy from '../assets/meowy-birthday.png'
 import Heart from '../components/heart.vue';
+import Drool from './drool.vue';
 
 function randomDegree(): number {
     const rand = Math.floor(Math.random() * 80);
@@ -15,12 +16,17 @@ function randomHorizontal() {
 </script>
 <template>
     <div class="main-container" , id="main">
-        <p class="birthday-title">HAPPY BIRTHDAY MEOWYYYYY!!!</p>
-        <img :src="meowy" alt="meowy" class="meowy">
-        <p class="birthday-text">i love you lots!!!! i wish you the best birthday today</p>
 
+        <p class="birthday-title">HAPPY BIRTHDAY MEOWYYYYY!!! <Drool class="drool"></Drool>
+        </p>
+        <img :src="meowy" alt="meowy" class="meowy">
+        <p class="birthday-text">i love you lots!!!! i wish you the best birthday today you deserve all the love in the
+            world</p>
+        <marquee behavior="alternate" direction="right" class="yay">
+            <p>YAAAAAAAAY</p>
+        </marquee>
         <Heart v-bind:style="{
-            transform: `rotate(${randomDegree() -10}deg)`,
+            transform: `rotate(${randomDegree() - 10}deg)`,
             top: '10%',
             left: `${randomHorizontal()}%`
 
@@ -70,6 +76,10 @@ function randomHorizontal() {
     font-size: calc(2.7rem + 0.390625vw);
     z-index: 1;
     font-weight: 900;
+    position: relative;
+    background-color: #d866ff;
+    padding: 10px 20px;
+    border-radius: 20px;
 }
 
 .meowy {
@@ -84,5 +94,30 @@ function randomHorizontal() {
     text-align: center;
     z-index: 1;
     font-weight: 600;
+    background-color: #f0a4fc;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.yay {
+    position: absolute;
+    top: 20px;
+    z-index: 1;
+    font-size: calc(2rem + 0.390625vw);
+
+    & p {
+        padding: 10px;
+        background-color: #d866ff;
+        width: fit-content;
+        border-radius: 10px;
+    }
+}
+
+.drool {
+    position: absolute;
+    width: 100px;
+    top: -80px;
+    right: 0;
+    z-index: 4;
 }
 </style>
